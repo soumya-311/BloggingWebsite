@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .outer-class{
+            width: 100vw;
+            height: 100vh;
+            background-image:url(https://c4.wallpaperflare.com/wallpaper/879/986/428/purple-landscape-reflection-dusk-evening-wallpaper-preview.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .inner-box{
+            width: 400px;
+            margin: 0 auto;
+            position: relative;
+            transform: translateY(30%);
+            padding-left: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 40px;
+            background-color: #ffffffcc;
+            border: 2px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px #212121;
+        }
+        h1{
+            font-size: 2.5rem;
+            color: #212121;
+            text-align: center;
+        }
+        .body{
+            margin: 20px 0;
+        }
+        .body p{
+            margin: 10px 0;
+        }
+        .body p label{
+            display: block;
+        }
+        .body p input{
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #cccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .body p input[type="submit"]{
+            background-color: #3498db;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        footer{
+            color: #555;
+            text-align: center;
+        }
+        footer a{
+            color: #1996c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-class">
+    <div class="inner-box">
+        <header class="heading">
+            <h1>Signup</h1>
+        </header>
+        <main class="body">
+            <form method="post" action="/insertres">
+                <p>
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="gname" required>
+                </p>
+                <p>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="gemail" required>
+                </p>
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="gpassword" required>
+                </p>
+                <p>
+                    <input type="submit" value="Create Account" name="b1">
+                </p>
+                    
+
+            </form>
+
+        </main>
+        <footer>
+            <p>
+                Already have an Account?<a href="/login">  Login</a>
+            </p>
+        </footer>
+    </div>
+    </div>
+</body>
+</html>

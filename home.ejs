@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Code Blogs
+    </title>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: screen;
+    width: screen;
+    padding: 0;
+    margin: 0;
+}
+
+#banner-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: flex-end;
+    /* Aligns content to the bottom */
+    flex-direction: column;
+    text-align: left;
+    padding-right: 50px;
+    /* Adds space between the text and the right edge */
+
+    background-image: url(https://img.freepik.com/free-photo/blue-surface-with-study-tools_23-2147864592.jpg);
+    color: #101010;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+
+    /* For parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.blogcardsection {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* Background image settings */
+    background-image: url('/assets/card1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200vh;
+    box-shadow: #333;
+    box-decoration-break: slice;
+}
+
+.blogcard {
+    margin: 1rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #2980b9;
+}
+
+.highlightssection {
+    display: flex;
+    flex-direction: row;
+    margin: 1.5rem;
+    margin-bottom: 1rem;
+    width: 80vw
+}
+
+@media screen and (max-width: 768px) {
+    .highlightssection {
+        flex-direction: column;
+    }
+}
+
+
+.highlightcontent {
+    padding: 0.3rem;
+}
+
+.highlightimage img {
+    border-radius: 20px;
+}
+    </style>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+        <div id="banner-container">
+            <h1>Welcome to Blogging Site</h1>
+            <p>Explore amazing blog posts and join the community.</p>
+        </div>
+
+
+            
+                    </div>
+
+            </div>
+
+
+        </div>
+
+        <%- include('partials/footer') %>
+</body>
+
+</html>

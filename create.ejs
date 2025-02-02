@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Blog</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://img.freepik.com/free-photo/flowers-notebook-near-laptop_23-2147759307.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-container {
+    width: 60%;
+    margin: 50px auto;
+    position: relative;
+    transform: translateY(30%);
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <script type="text/javascript">
+        let givealert=()=>alert("PUBLISHED");
+
+    </script>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+
+    <div class="blog-container">
+        <h1>CREATE YOUR MEMORIES HERE!</h1>
+        <form action="/submit-blog" method="get">
+            <div class="form-group">
+                <label for="title">Title of your memory:</label>
+                <input type="text" id="title" name="title" placeholder="Enter the title of your blog" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Your memory:</label>
+                <textarea id="content" name="content" placeholder="Write your memory here..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" onclick="givealert()">Publish Memory</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://img.freepik.com/free-photo/flowers-notebook-near-laptop_23-2147759307.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Update Window</h1>
+    <%
+    %>
+    <form style="text-align: center;" method="get" action="/updateres">
+        Title <input type="text" name="title" value="<%=rec[0].title%>"><br>
+        Content <input type="text" name="content" value="<%=rec[0].content%>"><br>
+        <input type="submit" value="update">
+    </form>
+</body>
+</html>

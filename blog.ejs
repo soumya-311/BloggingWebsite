@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Blog</title>
+    <style>
+        
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://colibriwp.com/blog/wp-content/uploads/2019/06/pawel-czerwinski-vI5XwPbGvmY-unsplash.jpg);
+    background-repeat: no-repeat;
+            background-size: cover;
+    margin: 0;
+    padding: 20px;
+}
+
+.table-container {
+    position: relative;
+    transform: translateY(40%);
+    max-width: 800px;
+    margin: 0 auto;
+    background: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.table-title {
+    text-align: center;
+    color: rgb(255, 81, 0);
+    margin-bottom: 20px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.styled-table thead {
+    background-color:hotpink;
+    color: #fff;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.btn.delete {
+    background-color: #dc3545; /* Red */
+}
+
+.btn.update {
+    background-color: #007BFF; /* Blue */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <%- include('partials/header') %>
+    </header>
+    <main>
+        <div class="table-container">
+            <h2 class="table-title">Our Blogs</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Content</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <%
+                for (let r in records) {
+                %>
+                    <tr>
+                        <td class="h"><%= records[r].title %></td>
+                        <td><%= records[r].content %></td>
+                        <td>
+                            <form action="/deletedata" method="GET" style="display:inline;">
+                                <input type="hidden" name="title" value="<%= records[r].title %>">
+                                <button type="submit" class="btn delete" aria-label="Delete <%= records[r].title %>">Delete</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/updatedata" method="GET" style="display:inline;">
+                                <input type="hidden" name="title" value="<%= records[r].title %>">
+                                <button type="submit" class="btn update" aria-label="Update <%= records[r].title %>">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                <%
+                }
+                %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
